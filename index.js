@@ -58,7 +58,7 @@ const getTheWeather = (speech) => {
     return response.json();
   })
   .then(function(weather){
-    if (weather.cod === '404') {
+    if (weather.cod === '401') {
       utterThis = new SpeechSynthesisUtterance(`I cannot find the weather for ${speech.split(' ')[5]}`);
       synth.speak(utterThis);
       return;
