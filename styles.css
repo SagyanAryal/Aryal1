@@ -35,17 +35,14 @@
 
 .text-box {
   max-height: 70vh;
+  
   overflow: scroll;
 }
 .text-box:focus {
   outline: none;
 }
-.text-box p {
-  border-bottom: 1px dotted black;
-  margin: 0px !important;
-}
+
 .fa {
-  color: white;
   background: #1e2440;
   border-radius: 50%;
   cursor: pointer;
@@ -53,16 +50,6 @@
   float: right;
   width: 2rem;
   height: 2rem;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
+
 }
-@media (max-width: 768px) {
-  .container {
-    width: 85vw;
-    max-width: 85vw;
-  }
-.text-box {
-    max-height: 55vh;
-  }
-}
+
