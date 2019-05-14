@@ -34,7 +34,7 @@ const dictate = () => {
           getTheWeather(speechToText);
       };
       
-      if (speechToText.includes('Hello')) {
+      if (speechToText.includes('hello')) {
           getGreet(speechToText);
       };
     }
