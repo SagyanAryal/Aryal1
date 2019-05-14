@@ -35,7 +35,7 @@ const dictate = () => {
       };
       
       if (speechToText.includes('hello')) {
-          getGreet(speechToText);
+          speak(getGreet);
       };
     }
   }
