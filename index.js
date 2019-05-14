@@ -33,6 +33,10 @@ const dictate = () => {
       if (speechToText.includes('what is the weather in')) {
           getTheWeather(speechToText);
       };
+      
+      if (speechToText.includes('Hello')) {
+          getGreet(speechToText);
+      };
     }
   }
 }
@@ -40,6 +44,10 @@ const dictate = () => {
 const speak = (action) => {
   utterThis = new SpeechSynthesisUtterance(action());
   synth.speak(utterThis);
+};
+
+const getGreet = () => {
+  return `Hello`
 };
 
 const getTime = () => {
@@ -67,4 +75,3 @@ const getTheWeather = (speech) => {
     synth.speak(utterThis);
   });
 };
-
