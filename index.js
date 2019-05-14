@@ -34,7 +34,7 @@ const dictate = () => {
           getTheWeather(speechToText);
       };
       
-      if (speechToText.includes('hello')) {
+      if (speechToText.includes('hello test')) {
           speak(getGreet);
       };
     }
@@ -47,7 +47,7 @@ const speak = (action) => {
 };
 
 const getGreet = () => {
-  return `hello`
+  return `hello`;
 };
 
 const getTime = () => {
