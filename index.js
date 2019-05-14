@@ -67,3 +67,4 @@ const getTheWeather = (speech) => {
     synth.speak(utterThis);
   });
 };
+
