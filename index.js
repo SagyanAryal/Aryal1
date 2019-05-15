@@ -34,7 +34,7 @@ const dictate = () => {
           getTheWeather(speechToText);
       };
       
-      if (speechToText.includes('hello how are you')) {
+      if (speechToText.includes('hello')) {
           speak(getGreet);
       };
     }
@@ -42,12 +42,12 @@ const dictate = () => {
 }
 
 const speak = (action) => {
-  utterThis = new SpeechSynthesisUtterance(action());
-  synth.speak(utterThis);
+  aryalSpeak = new SpeechSynthesisUtterance(action());
+  synth.speak(aryalSpeak);
 };
 
 const getGreet = () => {
-  return `hello i am doing great`;
+  return `hello`;
 };
 
 const getTime = () => {
@@ -67,11 +67,11 @@ const getTheWeather = (speech) => {
   })
   .then(function(weather){
     if (weather.cod === '401') {
-      utterThis = new SpeechSynthesisUtterance(`I cannot find the weather for ${speech.split(' ')[5]}`);
-      synth.speak(utterThis);
+      aryalSpeak = new SpeechSynthesisUtterance(`I cannot find the weather for ${speech.split(' ')[5]}`);
+      synth.speak(aryalSpeak);
       return;
     }
-    utterThis = new SpeechSynthesisUtterance(`the weather condition in ${weather.name} is mostly full of ${weather.weather[0].description} at a temperature of ${weather.main.temp} degrees Celcius`);
-    synth.speak(utterThis);
+    aryalSpeak = new SpeechSynthesisUtterance(`the weather condition in ${weather.name} is mostly full of ${weather.weather[0].description} at a temperature of ${weather.main.temp} degrees Celcius`);
+    synth.speak(aryalSpeak);
   });
 };
