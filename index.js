@@ -40,7 +40,7 @@ const dictate = () => {
       };
       
       if (speechToText.includes('add to my list')) {
-          speak(addList);
+          speak(addList(speechToText, myList));
       };
     }
   }
