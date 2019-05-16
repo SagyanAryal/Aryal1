@@ -61,7 +61,7 @@ const getDate = () => {
 };
 
 const getTheWeather = (speech) => {
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${speech.split(' ')[5]}&appid=4207cf1a7b70485b403adb72debcfcb5&units=metric`) 
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${speech.split(' ')[5]}&appid=4207cf1a7b70485b403adb72debcfcb5&units=metric`) 
   .then(function(response){
     return response.json();
   })
