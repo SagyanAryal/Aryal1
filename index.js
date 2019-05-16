@@ -7,6 +7,7 @@ let paragraph = document.createElement('p');
 let container = document.querySelector('.text-box');
 container.appendChild(paragraph);
 const sound = document.querySelector('.sound');
+var myList = [];
 
 icon.addEventListener('click', () => {
   sound.play();
@@ -31,11 +32,15 @@ const dictate = () => {
       };
       
       if (speechToText.includes('what is the weather in')) {
-          getTheWeather(speechToText);
+          getWeather(speechToText);
       };
       
-      if (speechToText.includes('hello')) {
+      if (speechToText.includes('hello how are you')) {
           speak(getGreet);
+      };
+      
+      if (speechToText.includes('add to my list')) {
+          speak(addList);
       };
     }
   }
@@ -60,7 +65,7 @@ const getDate = () => {
   return `today is ${time.toLocaleDateString()}`;
 };
 
-const getTheWeather = (speech) => {
+const getWeather = (speech) => {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${speech.split(' ')[5]}&appid=4207cf1a7b70485b403adb72debcfcb5&units=metric`) 
   .then(function(response){
     return response.json();
@@ -74,6 +79,9 @@ const getTheWeather = (speech) => {
     aryalSpeak = new SpeechSynthesisUtterance(`the weather condition in ${weather.name} is mostly full of ${weather.weather[0].description} at a temperature of ${weather.main.temp} degrees Celcius`);
     synth.speak(aryalSpeak);
   });
+  
+const addList = (speech, todoArray) => {
+    todoArray.push(speech.split(' ')[5]);
+    return `Your to do list contains ${todoArray[0]}`;
+  }
 };
-
-
