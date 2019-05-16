@@ -61,12 +61,12 @@ const getDate = () => {
 };
 
 const getTheWeather = (speech) => {
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${speech.split(' ')[5]}&appid=58b6f7c78582bffab3936dac99c31b25&units=metric`) 
+  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${speech.split(' ')[5]}&appid=4207cf1a7b70485b403adb72debcfcb5&units=metric`) 
   .then(function(response){
     return response.json();
   })
   .then(function(weather){
-    if (weather.cod === '401') {
+    if (weather.cod === '404') {
       aryalSpeak = new SpeechSynthesisUtterance(`I cannot find the weather for ${speech.split(' ')[5]}`);
       synth.speak(aryalSpeak);
       return;
