@@ -40,7 +40,7 @@ const dictate = () => {
       };
       
       if (speechToText.includes('add to my list')) {
-          addList(addList(speechToText, myList));
+          addList(speechToText, myList);
           paragraph.textContent = myList[0];
       };
     }
@@ -88,5 +88,6 @@ const addList = (speech, todoArray) => {
     return;
   }
 };
+
 
 
