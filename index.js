@@ -41,6 +41,7 @@ const dictate = () => {
       
       if (speechToText.includes('add to my list')) {
           speak(addList(speechToText, myList));
+          paragraph.textContent = myList[0];
       };
     }
   }
@@ -52,7 +53,7 @@ const speak = (action) => {
 };
 
 const getGreet = () => {
-  return `hello i am doing great`;
+  return `hello`;
 };
 
 const getTime = () => {
