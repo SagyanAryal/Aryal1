@@ -40,8 +40,8 @@ const dictate = () => {
       };
       
       if (speechToText.includes('add to my list')) {
-          paragraph.textContent = 'hello';
-          addList(speechToText, myList);
+          
+          myList = addList(speechToText, myList);
           
       };
     }
@@ -84,12 +84,10 @@ const getWeather = (speech) => {
   
 const addList = (speech, todoArray) => {
     todoArray.push(speech.split(' ')[4]);
-    aryalSpeak = new SpeechSynthesisUtterance(`your to do list contains ${todoArray[0]}`);
+    aryalSpeak = new SpeechSynthesisUtterance(`your to do list contains ${speech.split(' ')[4]}`);
     synth.speak(aryalSpeak);
-    return;
+    return todoArray;
   }
 };
-
-
 
 
