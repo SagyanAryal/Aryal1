@@ -82,7 +82,8 @@ const getWeather = (speech) => {
   
 const addList = (speech, todoArray) => {
     todoArray.push(speech.split(' ')[5]);
-    return `Your to do list contains ${todoArray[0]}`;
+    aryalSpeak new SpeechSynthesisUtterance(`Your to do list contains ${todoArray[0]}`);
+    synth.speak(aryalSpeak);
+    return;
   }
 };
-
