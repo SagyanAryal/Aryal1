@@ -54,7 +54,7 @@ const speak = (action) => {
 };
 
 const getGreet = () => {
-  return `hello`;
+  return `hello I am doing good`;
 };
 
 const getTime = () => {
